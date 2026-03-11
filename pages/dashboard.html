@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Dashboard - LittleSplashers</title>
+
+    <link rel="stylesheet" href="../css/styles.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+
+  <body class="dashboard-body">
+    <div class="container">
+      <h1 id="welcomeText"></h1>
+      <p class="subtitle">Manage your children's swim lessons</p>
+
+      <!-- STATS -->
+      <div class="grid stats">
+        <div class="card stat">
+          <i class="fa-solid fa-credit-card icon"></i>
+          <div>
+            <h2 id="creditCount">0</h2>
+            <p>Credits</p>
+          </div>
+        </div>
+
+        <div class="card stat">
+          <i class="fa-solid fa-calendar icon green"></i>
+          <div>
+            <h2 id="upcomingCount">0</h2>
+            <p>Upcoming</p>
+          </div>
+        </div>
+
+        <div class="card stat">
+          <i class="fa-solid fa-baby icon orange"></i>
+          <div>
+            <h2 id="childrenCount">0</h2>
+            <p>Children</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ACTIONS -->
+      <div class="actions">
+        <a href="add-child.html" class="btn primary">
+          <i class="fa-solid fa-plus"></i> Add Child
+        </a>
+
+        <a href="booking.html" class="btn outline">
+          <i class="fa-solid fa-calendar"></i> Book a Class
+        </a>
+
+        <a href="pricing.html" class="btn outline">
+          <i class="fa-solid fa-credit-card"></i> Buy Credits
+        </a>
+      </div>
+
+      <!-- CHILDREN -->
+      <h2>Your Children</h2>
+
+      <div id="childrenList"></div>
+
+      <!-- BOOKINGS -->
+      <h2>Upcoming Bookings</h2>
+
+      <div id="bookingList"></div>
+
+      <h2 id="historyTitle" style="display:none;">Booking History</h2>
+
+      <div id="historyList"></div>
+    </div>
+
+    <script src="../dashboard.js"></script>
+  </body>
+</html>

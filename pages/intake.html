@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Child Intake Form</title>
+
+    <link rel="stylesheet" href="../css/styles.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+
+  <body class="auth-body">
+    <div class="auth-container">
+      <a href="dashboard.html" class="back-btn">
+        <i class="fa-solid fa-arrow-left"></i> Back to Dashboard
+      </a>
+
+      <div class="auth-card">
+        <h2>Child Intake Form</h2>
+
+        <p id="childInfo"></p>
+
+        <form id="intakeForm">
+          <div class="form-group">
+            <label>Experience Level</label>
+
+            <select id="level">
+              <option value="beginner">Beginner</option>
+              <option value="some-experience">Some Experience</option>
+              <option value="confident">Confident</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Medical Notes *</label>
+
+            <textarea id="medical" required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>Safety Concerns *</label>
+
+            <textarea id="safety" required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>Daily Nap Times</label>
+
+            <div id="napContainer"></div>
+
+            <button type="button" id="addNap" class="btn small">Add Nap</button>
+          </div>
+
+          <button class="btn primary full">Complete Intake</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="../intake.js"></script>
+  </body>
+</html>

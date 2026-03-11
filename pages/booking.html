@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Book a Class</title>
+
+    <link rel="stylesheet" href="../css/styles.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+
+  <body class="auth-body">
+    <div class="auth-container">
+      <a href="dashboard.html" class="back-btn">
+        <i class="fa-solid fa-arrow-left"></i> Back
+      </a>
+
+      <h2>Book a Class</h2>
+
+      <div class="form-group">
+        <label>Select Child</label>
+
+        <select id="childSelect"></select>
+      </div>
+
+      <div class="form-group">
+        <label>Select Date</label>
+
+        <div id="dates"></div>
+      </div>
+
+      <div class="form-group">
+        <label>Select Time</label>
+
+        <div id="times"></div>
+      </div>
+
+      <div id="summary"></div>
+
+      <button onclick="confirmBooking()" class="btn primary full">
+        Confirm Booking
+      </button>
+    </div>
+
+    <script src="../booking.js"></script>
+  </body>
+</html>

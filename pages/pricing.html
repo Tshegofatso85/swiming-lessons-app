@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Pricing</title>
+
+    <link rel="stylesheet" href="../css/styles.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+
+  <body class="auth-body">
+    <div class="auth-container">
+      <h1 class="title">Pricing</h1>
+
+      <div class="pricing-grid">
+        <div class="plan" onclick="selectPlan('single',350,1)">
+          <h3>Single Lesson</h3>
+          <p class="price">R350</p>
+          <p>1 lesson credit</p>
+        </div>
+
+        <div class="plan popular" onclick="selectPlan('pack5',1500,5)">
+          <h3>5 Lesson Pack</h3>
+          <p class="price">R1500</p>
+          <p>Save R250</p>
+        </div>
+
+        <div class="plan" onclick="selectPlan('pack10',2800,10)">
+          <h3>10 Lesson Pack</h3>
+          <p class="price">R2800</p>
+          <p>Best value</p>
+        </div>
+      </div>
+
+      <div id="checkout" style="display:none">
+        <h3>Checkout</h3>
+
+        <p id="checkoutText"></p>
+
+        <button onclick="purchase()" class="btn primary full">Pay</button>
+      </div>
+    </div>
+
+    <script src="../pricing.js"></script>
+  </body>
+</html>
