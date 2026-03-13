@@ -1,5 +1,5 @@
 // Get logged in user
-const user = JSON.parse(localStorage.getItem("currentUser"));
+let user = JSON.parse(localStorage.getItem("currentUser"));
 
 if (!user) {
   window.location.href = "login.html";
