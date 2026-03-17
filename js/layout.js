@@ -8,6 +8,7 @@ async function loadLayout() {
   document.getElementById("footer").innerHTML = footerHTML;
 
   setupNavbar();
+  setupFooter();
 }
 
 loadLayout();

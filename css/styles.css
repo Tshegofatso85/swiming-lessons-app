@@ -42,7 +42,8 @@ body {
 
 .hero {
   position: relative;
-  background: url("hero-bg.jpg") center/cover no-repeat;
+  background: url("https://static.vecteezy.com/system/resources/thumbnails/070/641/101/small/adorable-baby-enjoying-swimming-and-splashing-in-clear-blue-water-creating-a-refreshing-and-playful-scene-photo.jpeg")
+    center/cover no-repeat;
   min-height: 80vh;
   display: flex;
   align-items: center;
@@ -514,6 +515,13 @@ textarea {
   align-items: center;
 }
 
+/* DESKTOP LAYOUT */
+.mobile-menu {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
 .logo {
   font-size: 20px;
   font-weight: bold;
@@ -557,6 +565,11 @@ textarea {
   border-radius: 6px;
   text-decoration: none;
   font-weight: 500;
+  cursor: pointer;
+  align-items: center;
+  text-align: center;
+  display: inline-block;
+  margin: 6px 26px 6px 0;
 }
 
 .btn.primary {
@@ -609,50 +622,55 @@ textarea {
   }
 }
 
-@media (max-width: 810px) {
+@media (max-width: 860px) {
   .nav-container {
     flex-wrap: wrap;
     position: relative;
   }
 
   /* HIDE BY DEFAULT */
-  .nav-links,
-  .nav-actions {
-    display: none;
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
+
+    display: none;
     flex-direction: column;
-    padding: 15px 0;
-    border-top: 1px solid #c0bebe;
-    background: rgba(255, 255, 255, 0.801);
+    align-items: center;
+
+    padding: 80px 20px 30px;
+
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+
+    z-index: 999;
   }
 
-  /* SHOW WHEN TOGGLED */
-  .nav-links.show,
-  .nav-actions.show {
+  .mobile-menu.show {
     display: flex;
   }
 
-  /* LINKS STYLE */
-  .nav-links li {
-    width: 100%;
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
     text-align: center;
-    padding: 10px 0;
-  }
-
-  .nav-links a {
-    display: block;
     width: 100%;
+    margin-right: 60px;
   }
 
-  /* ACTION BUTTONS */
   .nav-actions {
-    align-items: center;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
     gap: 10px;
+    width: 100%;
+    align-items: center;
   }
 
   .nav-actions .btn {
-    width: 90%;
-    text-align: center;
+    width: 80%;
   }
 
   /* MENU ICON */

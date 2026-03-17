@@ -1,50 +1,16 @@
-// function setupNavbar() {
-//   const toggle = document.getElementById("menuToggle");
-//   const navLinks = document.getElementById("navLinks");
-//   const navActions = document.getElementById("navActions");
-
-//   const user = JSON.parse(localStorage.getItem("currentUser"));
-
-//   if (toggle) {
-//     toggle.onclick = () => {
-//       console.log(navActions.classList);
-//       console.log(navLinks.classList);
-//       navActions.classList.toggle("show");
-//       navLinks.classList.toggle("show");
-//     };
-//   }
-
-//   if (user && navActions) {
-//     navActions.innerHTML = `
-
-//       <a href="dashboard.html" class="btn outline">
-//         ${user.name.split(" ")[0]}
-//       </a>
-
-//       <button id="logoutBtn" class="btn primary">
-//         Logout
-//       </button>
-
-//       `;
-
-//     document.getElementById("logoutBtn").onclick = () => {
-//       localStorage.removeItem("currentUser");
-//       window.location.href = "login.html";
-//     };
-//   }
-// }
 function setupNavbar() {
   const toggle = document.getElementById("menuToggle");
-  const navLinks = document.getElementById("navLinks");
-  const navActions = document.getElementById("navActions");
+  const mobileMenu = document.getElementById("mobileMenu");
 
   const user = JSON.parse(localStorage.getItem("currentUser"));
 
   // TOGGLE MENU
   if (toggle) {
     toggle.onclick = () => {
-      navLinks.classList.toggle("show");
-      navActions.classList.toggle("show");
+      mobileMenu.classList.toggle("show");
+      document.body.classList.toggle("menu-open");
+
+      toggle.textContent = mobileMenu.classList.contains("show") ? "✖" : "☰";
     };
   }
 
@@ -65,7 +31,7 @@ function setupNavbar() {
       if (logoutBtn) {
         logoutBtn.onclick = () => {
           localStorage.removeItem("currentUser");
-          window.location.href = "login.html";
+          window.location.href = "index.html";
         };
       }
     }, 0);
