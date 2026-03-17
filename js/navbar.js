@@ -5,9 +5,6 @@ function setupNavbar() {
 
   const user = JSON.parse(localStorage.getItem("currentUser"));
 
-  console.log(user);
-  console.log(navActions);
-
   if (toggle) {
     toggle.onclick = () => {
       navLinks.classList.toggle("show");

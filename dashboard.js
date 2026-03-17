@@ -42,7 +42,7 @@ if (user.children.length === 0) {
         
         <p>DOB: ${child.dateOfBirth}</p>
         
-        <p>Level: ${child.experienceLevel}</p>
+        <p>${child.intakeCompleted ? "Level: " + child.experienceLevel : ""}</p>
         
         <span class="badge ${child.intakeCompleted ? "ready" : "pending"}">
         ${child.intakeCompleted ? "Ready to book" : "Intake needed"}
