@@ -5,6 +5,7 @@ if (!user) {
 }
 
 user.bookings = user.bookings || [];
+user.credits = user.credits || 0;
 
 const timeSlots = [
   { time: "9:00 AM", spots: 2 },
@@ -25,6 +26,10 @@ const eligibleChildren = (user.children || []).filter((c) => c.intakeCompleted);
 
 if (eligibleChildren.length === 0) {
   document.body.innerHTML = "<h2>Please complete intake form first.</h2>";
+
+  setTimeout(() => {
+    window.location.href = "dashboard.html";
+  }, 3000);
 }
 
 eligibleChildren.forEach((child) => {
