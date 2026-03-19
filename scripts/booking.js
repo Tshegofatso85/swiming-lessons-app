@@ -152,6 +152,7 @@ function confirmBooking() {
   });
 
   localStorage.setItem("currentUser", JSON.stringify(user));
+  saveUser(user);
 
   alert("Booking confirmed!");
 

@@ -38,29 +38,41 @@ if (user.children.length === 0) {
     childrenList.innerHTML += `
         <div class="card">
         
-        <h3>${child.name}</h3>
+          <h3>${child.name}</h3>
         
-        <p>DOB: ${child.dateOfBirth}</p>
+          <p>DOB: ${child.dateOfBirth}</p>
         
-        <p>${child.intakeCompleted ? "Level: " + child.experienceLevel : ""}</p>
+          <p>${
+            child.intakeCompleted ? "Level: " + child.experienceLevel : ""
+          }</p>
         
-        <span class="badge ${child.intakeCompleted ? "ready" : "pending"}">
-        ${child.intakeCompleted ? "Ready to book" : "Intake needed"}
-        </span>
+          <span class="badge ${child.intakeCompleted ? "ready" : "pending"}">
+            ${child.intakeCompleted ? "Ready to book" : "Intake needed"}
+          </span>
         
-        <div class="actions">
+          <div class="actions">
         
-        ${
-          !child.intakeCompleted
-            ? `<a href="intake.html?id=${child.id}" class="btn small primary">
-                  Complete Intake
-                </a>`
-            : `<a href="booking.html" class="btn small outline">
-                  Book Lesson
-                </a>`
-        }
+            ${
+              !child.intakeCompleted
+                ? `<a href="intake.html?id=${child.id}" class="btn small primary">
+                    Complete Intake
+                    </a>`
+                : `<a href="booking.html" class="btn small outline">
+                    Book Lesson
+                    </a>`
+            }
+          
+            <button onclick="editChild('${child.id}')" class="btn small">
+              Edit
+            </button>
+          
+            <button onclick="deleteChild('${
+              child.id
+            }')" class="btn small danger">
+              Delete
+            </button>
         
-        </div>
+          </div>
         
         </div>
         `;
@@ -119,4 +131,24 @@ function startIntake(childId) {
   localStorage.setItem("intakeChildId", childId);
 
   window.location.href = "intake.html";
+}
+
+function deleteChild(childId) {
+  if (!confirm("Are you sure you want to delete this child?")) return;
+
+  // Remove child
+  user.children = user.children.filter((c) => c.id !== childId);
+
+  // Save changes
+  saveUser(user);
+
+  // Refresh UI
+  location.reload();
+}
+
+function editChild(childId) {
+  // store which child to edit
+  localStorage.setItem("editChildId", childId);
+
+  window.location.href = "add-child.html";
 }

@@ -26,6 +26,8 @@ function purchase() {
 
     localStorage.setItem("currentUser", JSON.stringify(user));
 
+    saveUser(user);
+
     alert(selectedPlan.credits + " credits added!");
 
     window.location.href = "booking.html";

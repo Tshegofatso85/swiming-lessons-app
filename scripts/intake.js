@@ -78,6 +78,8 @@ document.getElementById("intakeForm").addEventListener("submit", (e) => {
 
   localStorage.setItem("currentUser", JSON.stringify(user));
 
+  saveUser(user);
+
   alert("Intake completed!");
 
   window.location.href = "dashboard.html";
